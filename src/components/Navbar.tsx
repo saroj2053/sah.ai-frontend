@@ -1,10 +1,6 @@
 const Navbar = () => {
   return (
-    <nav
-      className="navbar nav py-2"
-      role="navigation"
-      aria-label="main navigation"
-    >
+    <nav className="navbar nav" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <div className="navbar-item flex is-align-items-center">
           <svg
@@ -80,9 +76,10 @@ const Navbar = () => {
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
-              <a className="button is-link is-dark is-rounded">
-                <strong>Get Started</strong>
+              <a className="button is-link is-dark">
+                <strong>Register</strong>
               </a>
+              <a className="button is-light is-info">Log in</a>
             </div>
           </div>
         </div>

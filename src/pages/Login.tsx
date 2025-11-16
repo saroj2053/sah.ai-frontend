@@ -1,0 +1,47 @@
+import { MdEmail, MdLock } from "react-icons/md";
+
+const Login = () => {
+  return (
+    <>
+      <section className="hero is-light is-info is-small">
+        <div className="hero-body">
+          <p className="title">Log in to your SahAI account!</p>
+          <p className="subtitle is-6 mt-2">
+            Please enter your credentials to log in.
+          </p>
+        </div>
+      </section>
+      <form className="box mx-auto mt-6" style={{ maxWidth: "400px" }}>
+        <div className="field">
+          <label className="label">Email</label>
+          <div className="control has-icons-left">
+            <input
+              className="input"
+              type="email"
+              placeholder="e.g. alex@example.com"
+            />
+            <span className="icon is-small is-left">
+              <MdEmail size={24} />
+            </span>
+          </div>
+          <p className="help"> Your email address will remain private.</p>
+        </div>
+
+        <div className="field">
+          <label className="label">Password</label>
+          <div className="control has-icons-left">
+            <input className="input" type="password" placeholder="********" />
+            <span className="icon is-small is-left">
+              <MdLock size={24} />
+            </span>
+          </div>
+        </div>
+        <div className="field mt-5">
+          <button className="button is-primary  is-fullwidth">Log in</button>
+        </div>
+      </form>
+    </>
+  );
+};
+
+export default Login;
