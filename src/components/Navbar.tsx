@@ -77,9 +77,8 @@ const Navbar = () => {
           <div className="navbar-item">
             <div className="buttons">
               <a className="button is-link is-dark">
-                <strong>Register</strong>
+                <strong>Get Started</strong>
               </a>
-              <a className="button is-light is-info">Log in</a>
             </div>
           </div>
         </div>

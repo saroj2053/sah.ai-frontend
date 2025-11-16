@@ -3,20 +3,20 @@ import { MdEmail, MdLock, MdPerson } from "react-icons/md";
 const Register = () => {
   return (
     <>
-      <section className="hero is-light is-info is-small">
-        <div className="hero-body">
+      <section className="hero is-small mt-6">
+        <div className="hero-body mx-auto has-text-centered">
           <p className="title">Create a new SahAI account!</p>
           <p className="subtitle is-6 mt-2">
             Please enter your details to create an account.
           </p>
         </div>
       </section>
-      <form className="box mx-auto mt-6" style={{ maxWidth: "550px" }}>
-        <div className="grid">
+      <form className="box mx-auto mt-3" style={{ maxWidth: "550px" }}>
+        <div className="grid is-two-columns mb-0">
           <div className="field">
             <label className="label">First Name</label>
             <div className="control has-icons-left">
-              <input className="input" type="text" placeholder="e.g. Alex" />
+              <input className="input" type="text" placeholder="e.g. John" />
               <span className="icon is-small is-left">
                 <MdPerson size={24} />
               </span>
@@ -25,7 +25,7 @@ const Register = () => {
           <div className="field">
             <label className="label">Last Name</label>
             <div className="control has-icons-left">
-              <input className="input" type="text" placeholder="e.g. Smith" />
+              <input className="input" type="text" placeholder="e.g. Doe" />
               <span className="icon is-small is-left">
                 <MdPerson size={24} />
               </span>
@@ -38,7 +38,7 @@ const Register = () => {
             <input
               className="input"
               type="email"
-              placeholder="e.g. alex@example.com"
+              placeholder="e.g. john@example.com"
             />
             <span className="icon is-small is-left">
               <MdEmail size={24} />
@@ -66,7 +66,7 @@ const Register = () => {
           </div>
         </div>
         <div className="field mt-5">
-          <button className="button is-primary  is-fullwidth">
+          <button className="button is-link is-dark is-fullwidth">
             Create account
           </button>
         </div>

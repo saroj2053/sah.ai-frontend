@@ -3,22 +3,22 @@ import { MdEmail, MdLock } from "react-icons/md";
 const Login = () => {
   return (
     <>
-      <section className="hero is-light is-info is-small">
-        <div className="hero-body">
+      <section className="hero is-small mt-6">
+        <div className="hero-body mx-auto has-text-centered">
           <p className="title">Log in to your SahAI account!</p>
           <p className="subtitle is-6 mt-2">
             Please enter your credentials to log in.
           </p>
         </div>
       </section>
-      <form className="box mx-auto mt-6" style={{ maxWidth: "400px" }}>
+      <form className="box mx-auto mt-3" style={{ maxWidth: "400px" }}>
         <div className="field">
           <label className="label">Email</label>
           <div className="control has-icons-left">
             <input
               className="input"
               type="email"
-              placeholder="e.g. alex@example.com"
+              placeholder="e.g. john@example.com"
             />
             <span className="icon is-small is-left">
               <MdEmail size={24} />
@@ -37,7 +37,9 @@ const Login = () => {
           </div>
         </div>
         <div className="field mt-5">
-          <button className="button is-primary  is-fullwidth">Log in</button>
+          <button className="button is-link is-dark is-fullwidth">
+            Log in
+          </button>
         </div>
       </form>
     </>
