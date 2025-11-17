@@ -1,17 +1,18 @@
 import { MdEmail, MdLock } from "react-icons/md";
+import { Link } from "react-router";
 
 const Login = () => {
   return (
     <>
       <section className="hero is-small mt-6">
         <div className="hero-body mx-auto has-text-centered">
-          <p className="title">Log in to your SahAI account!</p>
-          <p className="subtitle is-6 mt-2">
-            Please enter your credentials to log in.
-          </p>
+          <p className="title mb-2">Log in to your SahAI account!</p>
+          <Link to="/register" className="subtitle is-6 has-text-link">
+            Don't have an account? Register here.
+          </Link>
         </div>
       </section>
-      <form className="box mx-auto mt-3" style={{ maxWidth: "400px" }}>
+      <form className="box mx-auto mt-3" style={{ maxWidth: "550px" }}>
         <div className="field">
           <label className="label">Email</label>
           <div className="control has-icons-left">
