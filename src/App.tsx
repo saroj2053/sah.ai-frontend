@@ -1,14 +1,16 @@
-import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import { createBrowserRouter, RouterProvider } from "react-router";
 
 function App() {
+  const router = createBrowserRouter([
+    { path: "/", element: <>Welcome to Home Page</> },
+    { path: "/login", element: <Login /> },
+    { path: "/register", element: <Register /> },
+  ]);
   return (
     <>
-      <Navbar />
-
-      <Login />
-      <Register />
+      <RouterProvider router={router} />
     </>
   );
 }
