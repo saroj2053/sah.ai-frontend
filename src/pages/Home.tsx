@@ -4,10 +4,10 @@ const Home = () => {
   return (
     <div>
       {/* Hero Section */}
-      <section className="hero is-link">
+      <section className="hero has-background-link">
         <div className="hero-body has-text-centered">
           <p className="title is-2">Unlock Your Potential with SahAI</p>
-          <p className="subtitle is-5 mt-4">
+          <p className="subtitle is-5 mt-4 has-text-white">
             Your intelligent partner for streamlining workflows, generating
             creative content, and solving complex problems.
           </p>
