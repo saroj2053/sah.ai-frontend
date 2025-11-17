@@ -10,7 +10,7 @@ const Navbar = () => {
       >
         <div className="container">
           <div className="navbar-brand">
-            <div className="navbar-item is-flex is-align-items-center">
+            <Link to="/" className="navbar-item is-flex is-align-items-center">
               <svg
                 width="44"
                 height="33"
@@ -48,10 +48,13 @@ const Navbar = () => {
                   />
                 </g>
               </svg>
-              <span className="title is-4" style={{ marginLeft: "-10px" }}>
+              <span
+                className="title is-4"
+                style={{ marginLeft: "-10px", letterSpacing: "0.05em" }}
+              >
                 SahAI
               </span>
-            </div>
+            </Link>
 
             <a
               role="button"
@@ -71,27 +74,6 @@ const Navbar = () => {
             id="navbarBasicExample"
             className="navbar-menu is-justify-content-center"
           >
-            <div className="navbar-start">
-              <Link to="/" className="navbar-item">
-                Home
-              </Link>
-
-              <a className="navbar-item">About</a>
-
-              <div className="navbar-item has-dropdown is-hoverable">
-                <a className="navbar-link">More</a>
-                <div className="navbar-dropdown">
-                  <a className="navbar-item">About</a>
-                  <a className="navbar-item">Jobs</a>
-                  <a className="navbar-item">Contact</a>
-                  <hr className="navbar-divider" />
-                  <a className="navbar-item">Report an issue</a>
-                </div>
-              </div>
-
-              <a className="navbar-item">FAQ</a>
-            </div>
-
             <div className="navbar-end">
               <div className="navbar-item">
                 <div className="buttons">
