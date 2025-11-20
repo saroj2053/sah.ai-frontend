@@ -1,9 +1,13 @@
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { MdEmail, MdLock } from "react-icons/md";
 import { Link } from "react-router";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { useState } from "react";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
+
   const loginValidationSchema = Yup.object().shape({
     email: Yup.string()
       .email("Please enter a valid email address")
@@ -72,10 +76,10 @@ const Login = () => {
 
             <div className="field">
               <label className="label">Password</label>
-              <div className="control has-icons-left">
+              <div className="control has-icons-left has-icons-right">
                 <input
                   className="input"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   name="password"
                   value={values.password}
                   onChange={handleChange}
@@ -84,6 +88,16 @@ const Login = () => {
                 />
                 <span className="icon is-small is-left">
                   <MdLock size={24} />
+                </span>
+                <span
+                  className="icon is-small is-right is-clickable"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                >
+                  {showPassword ? (
+                    <FaEye size={24} />
+                  ) : (
+                    <FaEyeSlash size={24} />
+                  )}
                 </span>
               </div>
             </div>

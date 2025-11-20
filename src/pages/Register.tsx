@@ -1,9 +1,14 @@
 import { MdEmail, MdLock, MdPerson } from "react-icons/md";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link } from "react-router";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { useState } from "react";
 
 const Register = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   const registerValidationSchema = Yup.object().shape({
     firstName: Yup.string().required("First name is required"),
     lastName: Yup.string().required("Last name is required"),
@@ -124,10 +129,10 @@ const Register = () => {
             )}
             <div className="field">
               <label className="label">Password</label>
-              <div className="control has-icons-left">
+              <div className="control has-icons-left has-icons-right">
                 <input
                   className="input"
-                  type="password"
+                  type={showPassword ? "text" : "password"}
                   placeholder="********"
                   value={values.password}
                   onChange={handleChange}
@@ -137,6 +142,16 @@ const Register = () => {
                 <span className="icon is-small is-left">
                   <MdLock size={24} />
                 </span>
+                <span
+                  className="icon is-small is-right is-clickable"
+                  onClick={() => setShowPassword((prev) => !prev)}
+                >
+                  {showPassword ? (
+                    <FaEye size={24} />
+                  ) : (
+                    <FaEyeSlash size={24} />
+                  )}
+                </span>
               </div>
             </div>
             {touched.password && errors.password && (
@@ -144,10 +159,10 @@ const Register = () => {
             )}
             <div className="field">
               <label className="label">Confirm Password</label>
-              <div className="control has-icons-left">
+              <div className="control has-icons-left has-icons-right">
                 <input
                   className="input"
-                  type="password"
+                  type={showConfirmPassword ? "text" : "password"}
                   placeholder="********"
                   value={values.confirmPassword}
                   onChange={handleChange}
@@ -156,6 +171,16 @@ const Register = () => {
                 />
                 <span className="icon is-small is-left">
                   <MdLock size={24} />
+                </span>
+                <span
+                  className="icon is-small is-right is-clickable"
+                  onClick={() => setShowConfirmPassword((prev) => !prev)}
+                >
+                  {showConfirmPassword ? (
+                    <FaEye size={24} />
+                  ) : (
+                    <FaEyeSlash size={24} />
+                  )}
                 </span>
               </div>
               {touched.confirmPassword && errors.confirmPassword && (
