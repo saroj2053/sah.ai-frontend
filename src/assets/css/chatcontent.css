@@ -107,6 +107,11 @@
   .sidebar {
     display: none;
   }
+
+  .main-content {
+    margin-left: 0;
+  }
+
   .chat-scroll-area,
   .input-wrapper {
     padding-left: 1rem;
