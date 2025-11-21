@@ -9,7 +9,7 @@ const Navbar = () => {
         aria-label="main navigation"
       >
         <div className="container">
-          <div className="navbar-brand">
+          <div>
             <Link to="/" className="navbar-item is-flex is-align-items-center">
               <svg
                 width="44"
