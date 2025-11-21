@@ -1,0 +1,18 @@
+:root {
+  --bg-sidebar: #f0f4f9;
+  --bg-main: #ffffff;
+  --text-primary: #1f1f1f;
+  --text-secondary: #444746;
+  --accent-blue: #cce8fa;
+  --user-bubble: #f0f4f9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-blue) transparent;
+}

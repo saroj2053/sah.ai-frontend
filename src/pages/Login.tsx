@@ -7,6 +7,13 @@ import { useState } from "react";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const commonPasswords = [
+    "password",
+    "12345678",
+    "qwerty12",
+    "hello123",
+    "87654321",
+  ];
 
   const loginValidationSchema = Yup.object().shape({
     email: Yup.string()
@@ -18,6 +25,7 @@ const Login = () => {
         /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
         "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character."
       )
+      .notOneOf(commonPasswords, "This password is too common.")
       .required("Password is required"),
   });
 

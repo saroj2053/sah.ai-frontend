@@ -1,4 +1,5 @@
 import AppLayout from "./layout/AppLayout";
+import Chat from "./pages/Chat";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -21,6 +22,7 @@ function App() {
         { path: "/register", element: <Register /> },
       ],
     },
+    { path: "/app", element: <Chat /> },
   ]);
   return (
     <>
