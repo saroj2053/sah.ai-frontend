@@ -12,7 +12,7 @@ const ChatContent: React.FC = () => {
           <button className="sidebar-btn is-hidden-tablet mr-2">
             <LuMenu size={24} />
           </button>
-          <span className="title is-4 mb-0 has-text-grey-dark mr-3">SahAI</span>
+          <span className="title is-4 mb-0 mr-3">SahAI</span>
         </div>
 
         <div className="is-flex is-align-items-center">
@@ -44,7 +44,7 @@ const ChatContent: React.FC = () => {
                 className="notification is-light mb-4"
                 style={{
                   backgroundColor: "#f8f9fa",
-                  borderLeft: "3px solid #ccc",
+                  borderLeft: "4px solid #ccc",
                 }}
               >
                 <p className="is-size-7 has-text-grey">Thinking...</p>
@@ -52,7 +52,7 @@ const ChatContent: React.FC = () => {
 
               <div className="content">
                 <p>Hello! It is great to connect with you.</p>
-                <p className="has-text-dark mt-2">
+                <p className="mt-2">
                   Additional response.. To do: Get chat content from backend and
                   render here.
                 </p>

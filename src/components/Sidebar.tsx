@@ -10,7 +10,7 @@ const Sidebar: React.FC = () => {
           <LuMenu size={24} />
         </button>
 
-        <button className="button is-ghost has-text-grey-darker pl-2">
+        <button className="button is-ghost pl-2">
           <span className="icon">
             <LuPlus size={18} />
           </span>
@@ -21,7 +21,7 @@ const Sidebar: React.FC = () => {
       <div className="bottom-section mt-auto">
         <div className="recent-history mb-4">
           <p className="heading pl-3 mb-2 has-text-grey">Recent</p>
-          <a className="button is-ghost is-fullwidth is-justify-content-start has-text-grey-dark text-truncate">
+          <a className="button is-ghost is-fullwidth is-justify-content-start  text-truncate">
             <span className="icon is-small mr-2">
               <LuHistory size={16} />
             </span>
