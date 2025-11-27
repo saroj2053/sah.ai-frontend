@@ -6,6 +6,7 @@ type AuthUserState = {
   email: string;
   firstName: string;
   lastName: string;
+  profileAvatar: string;
   token: string;
 } | null;
 

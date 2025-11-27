@@ -17,8 +17,6 @@ const useLogin = () => {
 
       const data = await response.json();
 
-      console.log("Login response data:", data);
-
       if (data.success === false || data.errorCode === "BAD_CREDENTIALS") {
         throw new Error(data.message || "Invalid email or password");
       }

@@ -3,9 +3,12 @@ import ChatPage from "./pages/ChatPage";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
+import useAuthStore from "./store/AuthStore";
 
 function App() {
+  const { authUser } = useAuthStore();
+
   const router = createBrowserRouter([
     {
       element: <AppLayout />,
@@ -18,11 +21,20 @@ function App() {
             </div>
           ),
         },
-        { path: "/login", element: <LoginPage /> },
-        { path: "/register", element: <RegisterPage /> },
+        {
+          path: "/login",
+          element: authUser ? <Navigate to="/app" /> : <LoginPage />,
+        },
+        {
+          path: "/register",
+          element: authUser ? <Navigate to="/app" /> : <RegisterPage />,
+        },
       ],
     },
-    { path: "/app", element: <ChatPage /> },
+    {
+      path: "/app",
+      element: authUser ? <ChatPage /> : <Navigate to="/login" />,
+    },
   ]);
   return (
     <>

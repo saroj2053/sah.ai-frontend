@@ -6,6 +6,7 @@ import Markdown from "react-markdown";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import useAuthStore from "../store/AuthStore";
 
 interface Message {
   role: "user" | "sahai";
@@ -16,6 +17,8 @@ const ChatContent: React.FC = () => {
   const [inputValue, setInputValue] = useState("");
   const [messages, setMessages] = useState<Message[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  const { authUser } = useAuthStore();
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (e.key === "Enter" && !e.shiftKey) {
@@ -76,7 +79,7 @@ const ChatContent: React.FC = () => {
           <figure className="image is-32x32">
             <img
               className="is-rounded"
-              src="https://api.dicebear.com/7.x/avataaars/svg?seed=Silky"
+              src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${authUser?.firstName}`}
               alt="User"
               style={{ border: "1px solid #ddd" }}
             />
