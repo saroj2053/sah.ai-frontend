@@ -5,10 +5,18 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
 
-const RegisterPage: React.FC = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+interface RegisterFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+}
 
+const RegisterPage: React.FC = () => {
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [showConfirmPassword, setShowConfirmPassword] =
+    useState<boolean>(false);
   const registerValidationSchema = Yup.object().shape({
     firstName: Yup.string().required("First name is required"),
     lastName: Yup.string().required("Last name is required"),
@@ -46,7 +54,7 @@ const RegisterPage: React.FC = () => {
           confirmPassword: "",
         }}
         validationSchema={registerValidationSchema}
-        onSubmit={async (values) => {
+        onSubmit={async (values: RegisterFormData) => {
           await new Promise((resolve) => setTimeout(resolve, 500));
           console.log(values);
         }}

@@ -5,8 +5,13 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import React, { useState } from "react";
 
+interface LoginFormData {
+  email: string;
+  password: string;
+}
+
 const LoginPage: React.FC = () => {
-  const [showPassword, setShowPassword] = useState(false);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
   const commonPasswords = [
     "password",
     "12345678",
@@ -42,7 +47,7 @@ const LoginPage: React.FC = () => {
       <Formik
         initialValues={{ email: "", password: "" }}
         validationSchema={loginValidationSchema}
-        onSubmit={async (values) => {
+        onSubmit={async (values: LoginFormData) => {
           await new Promise((resolve) => setTimeout(resolve, 500));
           console.log(values);
         }}
