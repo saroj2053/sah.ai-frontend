@@ -4,13 +4,11 @@ import { Link } from "react-router";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import React, { useState } from "react";
-
-interface LoginFormData {
-  email: string;
-  password: string;
-}
+import type { LoginFormData } from "../types/form";
+import useLogin from "../hooks/useLogin";
 
 const LoginPage: React.FC = () => {
+  const { login, loading } = useLogin();
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const commonPasswords = [
     "password",
@@ -48,8 +46,7 @@ const LoginPage: React.FC = () => {
         initialValues={{ email: "", password: "" }}
         validationSchema={loginValidationSchema}
         onSubmit={async (values: LoginFormData) => {
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          console.log(values);
+          await login(values);
         }}
       >
         {({
@@ -121,7 +118,9 @@ const LoginPage: React.FC = () => {
               <button
                 type="submit"
                 className="button is-link is-dark is-fullwidth"
-                disabled={isSubmitting || Object.keys(errors).length > 0}
+                disabled={
+                  isSubmitting || Object.keys(errors).length > 0 || loading
+                }
               >
                 Log in
               </button>
