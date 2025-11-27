@@ -1,8 +1,8 @@
 import AppLayout from "./layout/AppLayout";
-import Chat from "./pages/Chat";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import ChatPage from "./pages/ChatPage";
+import LandingPage from "./pages/LandingPage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import { createBrowserRouter, RouterProvider } from "react-router";
 
 function App() {
@@ -14,15 +14,15 @@ function App() {
           path: "/",
           element: (
             <div className="container mt-6">
-              <Home />
+              <LandingPage />
             </div>
           ),
         },
-        { path: "/login", element: <Login /> },
-        { path: "/register", element: <Register /> },
+        { path: "/login", element: <LoginPage /> },
+        { path: "/register", element: <RegisterPage /> },
       ],
     },
-    { path: "/app", element: <Chat /> },
+    { path: "/app", element: <ChatPage /> },
   ]);
   return (
     <>

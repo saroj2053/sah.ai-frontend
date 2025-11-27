@@ -1,9 +1,8 @@
 import { Link } from "react-router";
 
-const Home = () => {
+const LandingPage: React.FC = () => {
   return (
     <div>
-      {/* Hero Section */}
       <section className="hero has-background-link">
         <div className="hero-body has-text-centered">
           <p className="title is-2">Unlock Your Potential with SahAI</p>
@@ -17,7 +16,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="section">
         <div className="container">
           <h2 className="title has-text-centered">
@@ -61,7 +59,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
       <section className="section">
         <div className="container">
           <h2 className="title has-text-centered">
@@ -96,4 +93,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default LandingPage;

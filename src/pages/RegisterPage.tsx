@@ -5,7 +5,7 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
 
-const Register = () => {
+const RegisterPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
@@ -203,4 +203,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default RegisterPage;

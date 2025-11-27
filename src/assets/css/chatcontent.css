@@ -12,7 +12,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid var(--bg-main);
+  border-bottom: 1px solid var(--bg-sidebar);
   z-index: 10;
 }
 
@@ -29,7 +29,7 @@
 .chat-scroll-area {
   flex: 1;
   overflow-y: auto;
-  padding: 2rem 15%;
+  padding: 2rem 10%;
 }
 
 .message-row {
@@ -51,6 +51,7 @@
 }
 
 .sahai-row {
+  width: 100%;
   display: flex;
   gap: 1rem;
   align-items: flex-start;
@@ -58,7 +59,7 @@
 }
 
 .input-wrapper {
-  padding: 0 15% 2rem 15%;
+  padding: 0 10% 1rem 10%;
 }
 
 .sahai-input-box {
@@ -83,6 +84,7 @@
   font-family: inherit;
   font-size: 0.875rem;
   min-height: 24px;
+  padding-left: 10px;
 }
 
 .tool-btn {

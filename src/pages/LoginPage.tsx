@@ -3,9 +3,9 @@ import { MdEmail, MdLock } from "react-icons/md";
 import { Link } from "react-router";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import { useState } from "react";
+import React, { useState } from "react";
 
-const Login = () => {
+const LoginPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const commonPasswords = [
     "password",
@@ -128,4 +128,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginPage;
