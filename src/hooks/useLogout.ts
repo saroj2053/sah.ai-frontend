@@ -1,5 +1,6 @@
 import React from "react";
 import useAuthStore from "../store/AuthStore";
+import toast from "react-hot-toast";
 
 const useLogout = () => {
   const [loading, setLoading] = React.useState<boolean>(false);
@@ -19,6 +20,8 @@ const useLogout = () => {
       if (!response.ok) {
         throw new Error("Failed to logout");
       }
+
+      toast.success("Logout successful!");
 
       // clearing user from global state
       clearUser();

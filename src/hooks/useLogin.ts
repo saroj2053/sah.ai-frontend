@@ -1,6 +1,7 @@
 import { useState } from "react";
 import type { LoginFormData } from "../types/form";
 import useAuthStore from "../store/AuthStore";
+import toast from "react-hot-toast";
 
 const useLogin = () => {
   const [loading, setLoading] = useState(false);
@@ -18,11 +19,13 @@ const useLogin = () => {
       const data = await response.json();
 
       if (data.success === false || data.errorCode === "BAD_CREDENTIALS") {
+        toast.error(data.message);
         throw new Error(data.message || "Invalid email or password");
       }
 
       // Updating application state to reflect logged-in user
       setAuthUser(data);
+      toast.success("Login successful!");
     } catch (error) {
       console.log("Login error:", error);
     } finally {
