@@ -1,8 +1,10 @@
 import { useState } from "react";
 import type { LoginFormData } from "../types/form";
+import useAuthStore from "../store/AuthStore";
 
 const useLogin = () => {
   const [loading, setLoading] = useState(false);
+  const { setAuthUser } = useAuthStore();
 
   const login = async (formData: LoginFormData) => {
     setLoading(true);
@@ -21,7 +23,8 @@ const useLogin = () => {
         throw new Error(data.message || "Invalid email or password");
       }
 
-      localStorage.setItem("user", JSON.stringify(data));
+      // Updating application state to reflect logged-in user
+      setAuthUser(data);
     } catch (error) {
       console.log("Login error:", error);
     } finally {
