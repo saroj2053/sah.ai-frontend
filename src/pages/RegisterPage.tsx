@@ -4,19 +4,16 @@ import { Link } from "react-router";
 import { Formik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-
-interface RegisterFormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
+import type { RegisterFormData } from "../types/form";
+import useRegister from "../hooks/useRegister";
 
 const RegisterPage: React.FC = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [showConfirmPassword, setShowConfirmPassword] =
     useState<boolean>(false);
+
+  const { register, loading } = useRegister();
+
   const registerValidationSchema = Yup.object().shape({
     firstName: Yup.string().required("First name is required"),
     lastName: Yup.string().required("Last name is required"),
@@ -55,8 +52,7 @@ const RegisterPage: React.FC = () => {
         }}
         validationSchema={registerValidationSchema}
         onSubmit={async (values: RegisterFormData) => {
-          await new Promise((resolve) => setTimeout(resolve, 500));
-          console.log(values);
+          await register(values);
         }}
       >
         {({
@@ -199,7 +195,9 @@ const RegisterPage: React.FC = () => {
               <button
                 type="submit"
                 className="button is-link is-dark is-fullwidth"
-                disabled={isSubmitting || Object.keys(errors).length > 0}
+                disabled={
+                  isSubmitting || Object.keys(errors).length > 0 || loading
+                }
               >
                 Create account
               </button>
